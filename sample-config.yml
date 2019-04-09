@@ -1,0 +1,10 @@
+# Amazon RDS for MySQL / Amazon Aurora Mysql-compatible
+mysqlClient: mysql
+# Amazon RDS for MariaDB
+mariaClient: mysql
+# Amazon RDS for PostgreSQL / Amazon Aurora postgresql-compatible
+postgresClient: psql
+# Amazon RDS for SQL Server
+mssqlClient: mssql-cli
+# Amazon RDS for Oracle
+oracleClient: sqlplus64
