@@ -10,7 +10,7 @@ Gords(Go-rds) is simple cli tool written by Golang.
 ## Overview
 Describe your DB Instances and connecting to DB.  
   
-![Gords-Demo1](https://raw.github.com/wiki/pottyasu/gords/images/gords1.gif)  
+![Gords-Demo1](https://raw.github.com/wiki/pottyasu/gords/images/gords-sample1.gif)  
 ## Requirement
 ### SQL Clients
 You need install SQL client apps for each DB Engine(e.g. mysql,psql,mssql-cli and sqlplus64 ) before use Gords.  
