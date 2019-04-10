@@ -29,7 +29,7 @@ You can change clients for use config file. Please check [Config](#Config) for m
 ### AWS Credentials / IAM Role
 Gords need Shared Creentials File(```.aws/credentials```) to use AWS SDK for Go. So, Plese specify credentials before use. If you already use other SDKs and tools (like the AWS CLI), you don't need to change anything.  
   
-Use IAM roles for Amazon EC2 if you running Gords on an Amazon EC2 instance. Please check [AWS Documents](#https://docs.aws.amazon.com/sdk-for-go/v1/developer-guide/configuring-sdk.html#specifying-credentials) for more details.  
+Use IAM roles for Amazon EC2 if you running Gords on an Amazon EC2 instance. Please check [AWS Documents](https://docs.aws.amazon.com/sdk-for-go/v1/developer-guide/configuring-sdk.html#specifying-credentials) for more details.  
 #### Permission
 You need following API permissions to use Gords.  
 - DescribeDBInstances
