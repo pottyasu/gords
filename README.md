@@ -58,13 +58,13 @@ $ gords -p my-profile
 ```
 #### Example 3: Change DB User Name.
 ```
-$ gords -u root
+$ gords -u yourname
 ```
 #### Example 4: Print shell command.
 ```
 $ gords -c 
     ...  
-mysql -h  mysql–instance1.123456789012.ap-northeast-1.rds.amazonaws.com -P 3306 -u rot -p
+mysql -h  mysql–instance1.123456789012.ap-northeast-1.rds.amazonaws.com -P 3306 -u root -p
 ```
 ## Config
 Here is sample config. Please note Gords search ```$HOME/.goods/config.yml``` first. If there are no exist, Gords search current directory(```./config.yml```) where you are running Gords.
