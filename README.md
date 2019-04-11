@@ -20,7 +20,7 @@ The default value for each DB Engine and SQL client apps is below.
 # Client App : DB Engine
 mysql : mysql,aurora,aurora-mysql  
 mysql : mariaDB  
-psql : postgres.aurora-postgresql  
+psql : postgres,aurora-postgresql  
 mssql-cli : sqlserver-ee,sqlserver-se,sqlserver-ex,sqlserver-web  
 sqlplus64 : oracle-ee,oracle-se2,oracle-se1,oracle-se
 ```
