@@ -67,7 +67,7 @@ $ gords -c
 mysql -h  mysql–instance1.123456789012.ap-northeast-1.rds.amazonaws.com -P 3306 -u root -p
 ```
 ## Config
-Here is sample config. Please note Gords search ```$HOME/.goods/config.yml``` first. If there are no exist, Gords search current directory(```./config.yml```) where you are running Gords.
+Here is sample config. Please note Gords search ```$HOME/.goods/gords_config.yaml``` first. If there are no exist, Gords search current directory(```./config.yml```) where you are running Gords.
 ```
 # Amazon RDS for MySQL / Amazon Aurora Mysql-compatible  
 mysqlClient: mysql  
