@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"fmt"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/awserr"
 	"github.com/aws/aws-sdk-go/aws/session"
@@ -9,7 +10,6 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 	"os"
-	"fmt"
 	"os/exec"
 	"strings"
 )
@@ -43,10 +43,10 @@ var (
 // init cmd
 func init() {
 	// Handling flags
-	rootCmd.PersistentFlags().StringVarP(&profileName, "profile", "p", "default","Select profile")
-	rootCmd.PersistentFlags().StringVarP(&regionName, "region", "r", "ap-northeast-1","Select region")
-	rootCmd.PersistentFlags().StringVarP(&userName, "username", "u", "MasterUserName","Select user name")
-	rootCmd.PersistentFlags().BoolVarP(&catFlag, "cat", "c", false, "Output to command line")
+	rootCmd.PersistentFlags().StringVarP(&profileName, "profile", "p", "default","Override profile")
+	rootCmd.PersistentFlags().StringVarP(&regionName, "region", "r", "ap-northeast-1","Override region")
+	rootCmd.PersistentFlags().StringVarP(&userName, "username", "u", "","Override user name")
+	rootCmd.PersistentFlags().BoolVarP(&catFlag, "cat", "c", false, "Output command")
 	// Handling Config
 	initViperConfig()
 }
@@ -141,6 +141,23 @@ func responseParser(res *rds.DescribeDBInstancesOutput, res2 *rds.DescribeDBClus
 				IsClusterWriter:      *cm.IsClusterWriter,
 			}
 			parsedCluster = append(parsedCluster, temp2)
+		}
+		// Handling aurora serverless
+		if aws.StringValue(c.EngineMode) == "serverless" {
+			temp = dbInstance{
+				DBInstanceIdentifier: *c.DBClusterIdentifier,
+				DBInstanceStatus:     *c.Status,
+				DBInstanceClass:      "none",
+				Engine:               *c.Engine,
+				EndpointAdress:       *c.Endpoint,
+				EndpointPort:         *c.Port,
+				MasterUserName:       *c.MasterUsername,
+				EndpointType:         "serverless",
+				EngineVersion:        *c.EngineVersion,
+				DBName:               "none",
+			}
+			parsedResponse = append(parsedResponse, temp)
+			continue
 		}
 	}
 
